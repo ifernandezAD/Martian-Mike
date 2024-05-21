@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://br6uf4mkwxuu2"]
+[gd_scene load_steps=9 format=3 uid="uid://br6uf4mkwxuu2"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_gighs"]
 [ext_resource type="PackedScene" uid="uid://cmodfaauhoge6" path="res://scenes/player.tscn" id="2_4j4i5"]
 [ext_resource type="Texture2D" uid="uid://yyesqwps5epp" path="res://icon.svg" id="3_2oc7m"]
+[ext_resource type="PackedScene" uid="uid://dfs2w5df16xvs" path="res://scenes/saw.tscn" id="4_dlssd"]
 [ext_resource type="PackedScene" uid="uid://c620yoggye3ry" path="res://scenes/jump_pad.tscn" id="4_w5ckk"]
+[ext_resource type="PackedScene" uid="uid://e2crf1g3o5kj" path="res://scenes/spike_ball.tscn" id="5_8hh7w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t7qmu"]
 size = Vector2(610, 20)
@@ -40,7 +42,19 @@ shape = SubResource("RectangleShape2D_b7dvw")
 [node name="StartPosition" type="Marker2D" parent="."]
 position = Vector2(229, 176)
 
-[node name="JumpPad" parent="." instance=ExtResource("4_w5ckk")]
+[node name="Traps" type="Node2D" parent="."]
+
+[node name="Saw" parent="Traps" instance=ExtResource("4_dlssd")]
+position = Vector2(327, 205)
+
+[node name="SpikeBall" parent="Traps" instance=ExtResource("5_8hh7w")]
+position = Vector2(409, 211)
+
+[node name="Objects" type="Node2D" parent="."]
+
+[node name="JumpPad" parent="Objects" instance=ExtResource("4_w5ckk")]
 position = Vector2(174, 210)
 
 [connection signal="body_entered" from="Deathzone" to="." method="_on_deathzone_body_entered"]
+[connection signal="touched_player" from="Traps/Saw" to="." method="_on_trap_touched_player"]
+[connection signal="touched_player" from="Traps/SpikeBall" to="." method="_on_trap_touched_player"]
