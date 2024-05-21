@@ -45,15 +45,15 @@ position = Vector2(229, 176)
 [node name="Traps" type="Node2D" parent="."]
 
 [node name="Saw" parent="Traps" instance=ExtResource("4_dlssd")]
-position = Vector2(327, 205)
+position = Vector2(-30, 205)
 
 [node name="SpikeBall" parent="Traps" instance=ExtResource("5_8hh7w")]
-position = Vector2(409, 211)
+position = Vector2(380, 211)
 
 [node name="Objects" type="Node2D" parent="."]
 
 [node name="JumpPad" parent="Objects" instance=ExtResource("4_w5ckk")]
-position = Vector2(174, 210)
+position = Vector2(105, 210)
 
 [connection signal="body_entered" from="Deathzone" to="." method="_on_deathzone_body_entered"]
 [connection signal="touched_player" from="Traps/Saw" to="." method="_on_trap_touched_player"]
