@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://br6uf4mkwxuu2"]
+[gd_scene load_steps=10 format=3 uid="uid://br6uf4mkwxuu2"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_gighs"]
 [ext_resource type="PackedScene" uid="uid://cmodfaauhoge6" path="res://scenes/player.tscn" id="2_4j4i5"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dfs2w5df16xvs" path="res://scenes/saw.tscn" id="4_dlssd"]
 [ext_resource type="PackedScene" uid="uid://c620yoggye3ry" path="res://scenes/jump_pad.tscn" id="4_w5ckk"]
 [ext_resource type="PackedScene" uid="uid://e2crf1g3o5kj" path="res://scenes/spike_ball.tscn" id="5_8hh7w"]
+[ext_resource type="PackedScene" uid="uid://bon1errkogkb" path="res://scenes/tile_map.tscn" id="7_p44av"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t7qmu"]
 size = Vector2(610, 20)
@@ -17,10 +18,10 @@ size = Vector2(1570, 69)
 script = ExtResource("1_gighs")
 
 [node name="Player" parent="." instance=ExtResource("2_4j4i5")]
-position = Vector2(229, 209)
+position = Vector2(228, 180)
 
 [node name="Ground" type="StaticBody2D" parent="."]
-position = Vector2(229, 234)
+position = Vector2(229, 34)
 
 [node name="Sprite2D" type="Sprite2D" parent="Ground"]
 modulate = Color(0, 0, 0, 1)
@@ -40,9 +41,10 @@ position = Vector2(-14, 24.5)
 shape = SubResource("RectangleShape2D_b7dvw")
 
 [node name="StartPosition" type="Marker2D" parent="."]
-position = Vector2(229, 176)
+position = Vector2(228, 147)
 
 [node name="Traps" type="Node2D" parent="."]
+position = Vector2(-1, -29)
 
 [node name="Saw" parent="Traps" instance=ExtResource("4_dlssd")]
 position = Vector2(-30, 160)
@@ -54,8 +56,13 @@ position = Vector2(-30, 205)
 position = Vector2(380, 211)
 
 [node name="Objects" type="Node2D" parent="."]
+position = Vector2(-1, -29)
 
 [node name="JumpPad" parent="Objects" instance=ExtResource("4_w5ckk")]
 position = Vector2(105, 210)
+
+[node name="TileMap" parent="." instance=ExtResource("7_p44av")]
+position = Vector2(-1, -30)
+layer_0/tile_data = PackedInt32Array(983034, 458752, 0, 1048570, 458752, 1, 1114106, 458752, 2, 983035, 458752, 0, 1048571, 458752, 1, 1114107, 458752, 2, 983036, 458752, 0, 1048572, 458752, 1, 1114108, 458752, 2, 983037, 458752, 0, 1048573, 458752, 1, 1114109, 458752, 2, 983038, 458752, 0, 1048574, 458752, 1, 1114110, 458752, 2, 983039, 458752, 0, 1048575, 458752, 1, 1114111, 458752, 2, 917504, 458752, 0, 983040, 458752, 1, 1048576, 458752, 2, 917505, 458752, 0, 983041, 458752, 1, 1048577, 458752, 2, 917506, 458752, 0, 983042, 458752, 1, 1048578, 458752, 2, 917507, 458752, 0, 983043, 458752, 1, 1048579, 458752, 2, 917508, 458752, 0, 983044, 458752, 1, 1048580, 458752, 2, 917509, 458752, 0, 983045, 458752, 1, 1048581, 458752, 2, 917510, 458752, 0, 983046, 458752, 1, 1048582, 458752, 2, 917511, 458752, 0, 983047, 458752, 1, 1048583, 458752, 2, 917512, 458752, 0, 983048, 458752, 1, 1048584, 458752, 2, 917513, 458752, 0, 983049, 458752, 1, 1048585, 458752, 2, 917514, 458752, 0, 983050, 458752, 1, 1048586, 458752, 2, 917515, 458752, 0, 983051, 458752, 1, 1048587, 458752, 2, 917516, 458752, 0, 983052, 458752, 1, 1048588, 458752, 2, 917517, 458752, 0, 983053, 458752, 1, 1048589, 458752, 2, 917518, 458752, 0, 983054, 458752, 1, 1048590, 458752, 2, 917519, 458752, 0, 983055, 458752, 1, 1048591, 458752, 2, 917520, 458752, 0, 983056, 458752, 1, 1048592, 458752, 2, 917521, 458752, 0, 983057, 458752, 1, 1048593, 458752, 2, 917522, 458752, 0, 983058, 458752, 1, 1048594, 458752, 2, 917523, 458752, 0, 983059, 458752, 1, 1048595, 458752, 2, 917524, 458752, 0, 983060, 458752, 1, 1048596, 458752, 2, 917525, 458752, 0, 983061, 458752, 1, 1048597, 458752, 2, 917526, 458752, 0, 983062, 458752, 1, 1048598, 458752, 2, 917527, 458752, 0, 983063, 458752, 1, 1048599, 458752, 2, 917528, 458752, 0, 983064, 458752, 1, 1048600, 458752, 2, 917529, 458752, 0, 983065, 458752, 1, 1048601, 458752, 2, 917530, 458752, 0, 983066, 458752, 1, 1048602, 458752, 2, 917531, 458752, 0, 983067, 458752, 1, 1048603, 458752, 2, 917532, 458752, 0, 983068, 458752, 1, 1048604, 458752, 2, 917533, 458752, 0, 983069, 458752, 1, 1048605, 458752, 2, 917534, 458752, 0, 983070, 458752, 1, 1048606, 458752, 2, 917535, 458752, 0, 983071, 458752, 1, 1048607, 458752, 2, 917536, 458752, 0, 983072, 458752, 1, 1048608, 458752, 2, 917537, 458752, 0, 983073, 458752, 1, 1048609, 458752, 2, 917538, 458752, 0, 983074, 458752, 1, 1048610, 458752, 2, 917539, 524288, 0, 983075, 524288, 1, 1048611, 524288, 2, 983033, 393216, 0, 1048569, 393216, 1, 1114105, 393216, 2, 655383, 1114112, 1, 655384, 1179648, 1, 655385, 1245184, 1, 589851, 1114112, 1, 589852, 1179648, 1, 589853, 1245184, 1, 720915, 1114112, 1, 720916, 1179648, 1, 720917, 1245184, 1)
 
 [connection signal="body_entered" from="Deathzone" to="." method="_on_deathzone_body_entered"]
