@@ -5,8 +5,9 @@ class_name Player
 @export var speed = 125
 @export var jump_force = 200
 
-
 @onready var animated_sprite = $AnimatedSprite2D
+
+var active = true
 
 func _physics_process(delta):
 	if is_on_floor() == false:
@@ -14,10 +15,13 @@ func _physics_process(delta):
 		if velocity.y > 500:
 			velocity.y = 500
 	
-	if Input.is_action_just_pressed("jump") && is_on_floor():
-		jump(jump_force)
+	var direction = 0
+	if active == true:
+		if Input.is_action_just_pressed("jump") && is_on_floor():
+			jump(jump_force)
+			
+		direction = Input.get_axis("move left","move right")
 	
-	var direction = Input.get_axis("move left","move right")
 	if direction!=0:
 		animated_sprite.flip_h = (direction == -1)
 	
