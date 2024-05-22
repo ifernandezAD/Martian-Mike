@@ -4,9 +4,9 @@ extends Node2D
 
 @onready var start = $Start
 @onready var exit = $Exit
+@onready var deathzone = $Deathzone
 
 var player = null
-
 
 func _ready():
 	player = get_tree().get_first_node_in_group("player")
@@ -20,6 +20,7 @@ func _ready():
 		
 	
 	exit.body_entered.connect(_on_exit_body_entered)
+	deathzone.body_entered.connect(_on_deathzone_body_entered)
 
 func _process(delta):
 	if Input.is_action_just_pressed("quit"):
