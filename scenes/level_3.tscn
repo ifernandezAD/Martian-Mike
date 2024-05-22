@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://bk7um1gt0ctr"]
+[gd_scene load_steps=10 format=3 uid="uid://bk7um1gt0ctr"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_8nf46"]
 [ext_resource type="PackedScene" uid="uid://ckvhsjd1asnmu" path="res://scenes/bg.tscn" id="2_1xvm6"]
+[ext_resource type="PackedScene" uid="uid://d2t6g3rdjlisv" path="res://scenes/ui_layer.tscn" id="2_q3d0w"]
 [ext_resource type="Texture2D" uid="uid://dwks6gc0t60r" path="res://assets/textures/bg/Yellow.png" id="3_37u7f"]
 [ext_resource type="PackedScene" uid="uid://evgqhhmimwh1" path="res://scenes/start.tscn" id="3_kgyk8"]
 [ext_resource type="PackedScene" uid="uid://fytnywngahxm" path="res://scenes/exit.tscn" id="4_3e0fv"]
@@ -11,6 +12,8 @@
 
 [node name="Level_2" type="Node2D"]
 script = ExtResource("1_8nf46")
+
+[node name="UILayer" parent="." instance=ExtResource("2_q3d0w")]
 
 [node name="BG" parent="." instance=ExtResource("2_1xvm6")]
 bg_texture = ExtResource("3_37u7f")

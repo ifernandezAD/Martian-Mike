@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://bj0qyt0k0ucry"]
+[gd_scene load_steps=11 format=3 uid="uid://bj0qyt0k0ucry"]
 
 [ext_resource type="PackedScene" uid="uid://cmodfaauhoge6" path="res://scenes/player.tscn" id="1_bytdj"]
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_htuqf"]
 [ext_resource type="PackedScene" uid="uid://bk7um1gt0ctr" path="res://scenes/level_3.tscn" id="2_05m6y"]
 [ext_resource type="PackedScene" uid="uid://ckvhsjd1asnmu" path="res://scenes/bg.tscn" id="2_gvd0p"]
+[ext_resource type="PackedScene" uid="uid://d2t6g3rdjlisv" path="res://scenes/ui_layer.tscn" id="3_a1e15"]
 [ext_resource type="PackedScene" uid="uid://evgqhhmimwh1" path="res://scenes/start.tscn" id="3_tnn54"]
 [ext_resource type="Texture2D" uid="uid://hnxqj3047b0h" path="res://assets/textures/bg/Pink.png" id="4_5eyfe"]
 [ext_resource type="PackedScene" uid="uid://fytnywngahxm" path="res://scenes/exit.tscn" id="4_u2b7q"]
@@ -13,6 +14,8 @@
 [node name="Level_2" type="Node2D"]
 script = ExtResource("1_htuqf")
 next_level = ExtResource("2_05m6y")
+
+[node name="UILayer" parent="." instance=ExtResource("3_a1e15")]
 
 [node name="BG" parent="." instance=ExtResource("2_gvd0p")]
 bg_texture = ExtResource("4_5eyfe")
